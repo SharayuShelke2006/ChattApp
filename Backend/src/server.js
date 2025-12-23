@@ -6,7 +6,15 @@ const app = express();
 const __dirname=path.resolve();
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.route.js'; 
-import messageRotes from './routes/message.route.js';  
+import messageRotes from './routes/message.route.js'; 
+import cors from 'cors';
+import {ENV} from './lib/env.js';
+
+app.use(cors({
+    origin: ENV.CLIENT_URL,
+    credentials: true,
+}));
+
 dotenv.config({ path: './src/.env' });
 console.log("process.env.PORT =", process.env.PORT);
 const PORT=process.env.PORT || 3000;
