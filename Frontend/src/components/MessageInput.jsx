@@ -67,15 +67,16 @@ function MessageInput() {
 
       <form onSubmit={handleSendMessage} className="max-w-3xl mx-auto flex space-x-4">
         <input
-          type="text"
-          value={text}
-          onChange={(e) => {
-            setText(e.target.value);
-            isSoundEnabled && playRandomKeyStrokeSound();
-          }}
-          className="flex-1 bg-slate-800/50 border border-slate-700/50 rounded-lg py-2 px-4"
-          placeholder="Type your message..."
-        />
+  type="text"
+  value={text}
+  onChange={(e) => {
+    setText(e.target.value);
+    isSoundEnabled && playRandomKeyStrokeSound();
+  }}
+  className="flex-1 bg-slate-800/50 border border-slate-700/50 rounded-lg py-2 px-4 text-white placeholder-slate-400"
+  placeholder="Type your message..."
+/>
+
 
         <input
           type="file"
